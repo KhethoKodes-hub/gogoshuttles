@@ -14,174 +14,155 @@
         }
 
         body {
-            background: #04223e;
+            background: linear-gradient(to bottom, #e8ebed, #f9f5f5);
             height: 100vh;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-family: 'Arial', sans-serif;
             color: white;
         }
 
-        .loader-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
         #loader-video {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.85;
             z-index: 1;
+            opacity: 0.88;
         }
 
         .overlay {
-            position: absolute;
+            position: fixed;
             inset: 0;
-            background: linear-gradient(180deg, rgba(4,34,62,0.6), rgba(4,34,62,0.85));
+            background: linear-gradient(
+                to bottom,
+                rgba(4, 34, 62, 0.65),
+               
+            );
             z-index: 2;
         }
 
-        .content {
+        .loader-content {
             position: relative;
             z-index: 3;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
         .logo {
-            width: 160px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+            width: 180px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+            animation: logoFade 2s ease forwards;
+        }
+
+        @keyframes logoFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: #e31837;
+            margin-bottom: 8px;
+            opacity: 0.95;
+        }
+
+        .tagline {
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        /* Elegant Corporate Progress */
+        .progress-container {
+            width: 380px;
+            max-width: 85%;
+        }
+
+        .progress-track {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #e31837, #ff4d6b);
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(227, 24, 55, 0.6);
+            animation: progressAnim 2.8s ease-in-out forwards;
+        }
+
+        @keyframes progressAnim {
+            to { width: 100%; }
         }
 
         .loading-text {
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
+            margin-top: 18px;
+            font-size: 15px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: #e31837;
-        }
-
-        /* Road + Minibus Progress */
-        .road {
-            position: relative;
-            width: 420px;
-            height: 90px;
-            background: linear-gradient(#222, #333);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            z-index: 3;
-        }
-
-        .road::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            height: 6px;
-            background: repeating-linear-gradient(
-                90deg,
-                #e31837,
-                #e31837 30px,
-                transparent 30px,
-                transparent 60px
-            );
-            animation: roadMove 1.8s linear infinite;
-        }
-
-        @keyframes roadMove {
-            from { background-position: 0 0; }
-            to { background-position: -120px 0; }
-        }
-
-        .minibus {
-            position: absolute;
-            bottom: 18px;
-            left: -80px;
-            font-size: 52px;
-            transition: left 2.8s linear;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
-            z-index: 4;
-        }
-
-        .content.loaded .minibus {
-            left: calc(100% + 20px);
-        }
-
-        .minibus-wheel {
-            position: absolute;
-            bottom: -8px;
-            font-size: 18px;
-            animation: wheelSpin 0.4s linear infinite;
-        }
-
-        @keyframes wheelSpin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            font-weight: 500;
+            opacity: 0.85;
+            color:#0c0c0c;
         }
     </style>
 </head>
 <body>
 
-    <div class="loader-container">
-        <video id="loader-video" autoplay muted playsinline>
-            <source src="gogoloader.mp4" type="video/mp4">
-        </video>
-        
-        <div class="overlay"></div>
+    <!-- Fullscreen Video Background -->
+    <video id="loader-video" autoplay muted playsinline>
+        <source src="gogoloader.mp4" type="video/mp4">
+    </video>
 
-        <div class="content" id="content">
-            <img src="/logisko/assets/img/gogo-logo.png" alt="GO-GO Shuttles" class="logo">
-            <div class="loading-text">Getting Your Ride Ready...</div>
-            
-            <!-- Road with Moving Minibus -->
-            <div class="road">
-                <div class="minibus" id="minibus">🚌</div>
+    <div class="overlay"></div>
+
+    <div class="loader-content">
+        <img src="/logisko/assets/img/gogo-logo.png" alt="GO-GO Shuttles" class="logo">
+        
+        <div class="brand-name">GO-GO SHUTTLES</div>
+        <!--<div class="tagline">PREMIUM STAFF &amp; CORPORATE TRANSPORT</div>-->
+
+        <div class="progress-container">
+            <div class="progress-track">
+                <div class="progress-bar"></div>
             </div>
-            
-            <p style="margin-top: 25px; font-size: 14px; opacity: 0.8;">
-                Premium Staff & Shuttle Transport
-            </p>
         </div>
+
+        <div class="loading-text">Preparing Your Journey • Excellence in Motion</div>
     </div>
 
     <script>
-        const minibus = document.getElementById('minibus');
-        const content = document.getElementById('content');
         const video = document.getElementById('loader-video');
 
-        // Start the minibus animation after a tiny delay
-        setTimeout(() => {
-            content.classList.add('loaded');
-        }, 180);
-
-        // Redirect after maximum 3 seconds
+        // Auto redirect after maximum 3 seconds
         setTimeout(() => {
             window.location.href = '/logisko/index.html';
         }, 3000);
 
-        // Also redirect when video ends (if it's shorter)
+        // Redirect when video ends (if shorter than 3s)
         video.addEventListener('ended', () => {
             window.location.href = '/logisko/index.html';
         });
 
-        // Safety fallback
+        // Force play in case of autoplay restrictions
         video.play().catch(() => {
             setTimeout(() => {
                 window.location.href = '/logisko/index.html';
-            }, 1500);
+            }, 1200);
         });
     </script>
 
