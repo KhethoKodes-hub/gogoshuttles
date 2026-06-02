@@ -1,0 +1,801 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GO-GO Shuttles - About Us | Premium Staff Transport & Shuttle Services South Africa">
+    <meta name="author" content="GO-GO Shuttles">
+
+    <title>GO-GO Shuttles | About Us</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/gogologo.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/keyframe-animation.css">
+    <link rel="stylesheet" href="assets/lib/font-awesome-pro/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/logistic-icons.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/venobox.min.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/common-style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* ════════════════════════════════════
+           MODERN NAVBAR — GO-GO SHUTTLES
+        ════════════════════════════════════ */
+        .main-header {
+            background: #ffffff !important;
+            padding: 0 !important;
+            overflow: visible !important;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.09) !important;
+        }
+        .gogo-topbar {
+            background: #04223e;
+            border-bottom: 3px solid #e31837;
+        }
+        .gogo-topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 0;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .gogo-topbar-left { display: flex; align-items: center; gap: 22px; }
+        .gogo-topbar-left a, .gogo-topbar-email {
+            color: #b0c4de; font-size: 12.5px; text-decoration: none;
+            display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+        }
+        .gogo-topbar-left a:hover { color: #fff; }
+        .gogo-topbar-left i { color: #e31837; font-size: 11px; }
+        .gogo-topbar-right { display: flex; align-items: center; gap: 18px; }
+        .gogo-topnav-links { display: flex; align-items: center; gap: 10px; }
+        .gogo-topnav-links a {
+            color: #8899aa; font-size: 11px; text-decoration: none;
+            text-transform: uppercase; letter-spacing: 0.7px; transition: color 0.2s;
+        }
+        .gogo-topnav-links a:hover { color: #fff; }
+        .gogo-topnav-links span { color: #2a3a4a; font-size: 10px; }
+        .gogo-social-bar { display: flex; align-items: center; gap: 6px; }
+        .gogo-social-bar a {
+            color: #8899aa !important; font-size: 11px !important;
+            width: 26px; height: 26px;
+            border: 1px solid rgba(255,255,255,0.12); border-radius: 50%;
+            display: flex !important; align-items: center; justify-content: center;
+            transition: all 0.25s; text-decoration: none;
+        }
+        .gogo-social-bar a:hover { background: #e31837 !important; border-color: #e31837 !important; color: #fff !important; }
+        .main-header-wapper {
+            display: flex !important;
+            align-items: center !important;
+            grid-template-columns: unset !important;
+            min-height: 74px;
+        }
+        .site-logo {
+            background: transparent !important;
+            padding: 10px 28px 10px 0 !important;
+            border-radius: 0 !important;
+            border-right: 2px solid #f0f3f7 !important;
+            margin-right: 8px !important;
+            flex-shrink: 0 !important;
+            align-self: stretch !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .site-logo img { width: 130px !important; }
+        .main-header-info { background: transparent !important; flex: 1 !important; }
+        .main-header-info:before, .main-header-info:after { display: none !important; }
+        .top-header { display: none !important; }
+        .header-menu-wrap {
+            display: flex !important; align-items: center !important;
+            background: transparent !important; padding: 0 !important;
+            min-height: 74px !important; justify-content: space-between !important;
+        }
+        .header-menu-wrap:before { display: none !important; }
+        .nav-menu { display: flex !important; align-items: center !important; }
+        .nav-menu > li > a {
+            color: #1a1a2e !important; font-size: 14px !important;
+            font-weight: 600 !important; letter-spacing: 0.2px !important;
+            padding: 6px 15px !important; position: relative !important;
+            transition: color 0.25s !important;
+        }
+        .nav-menu > li > a::after {
+            content: '' !important; position: absolute !important;
+            bottom: -2px !important; left: 15px !important; right: 15px !important;
+            height: 2px !important; background: #e31837 !important;
+            transform: scaleX(0) !important; transform-origin: left !important;
+            transition: transform 0.28s ease !important;
+        }
+        .nav-menu > li:hover > a { color: #e31837 !important; }
+        .nav-menu > li:hover > a::after { transform: scaleX(1) !important; }
+        .header-menu-wrap li ul {
+            background: #04223e !important;
+            border-top: 3px solid #e31837 !important;
+            border-radius: 0 0 8px 8px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
+            min-width: 190px !important;
+        }
+        .header-menu-wrap li ul li a { color: #b0c4de !important; font-size: 13px !important; font-weight: 400 !important; }
+        .header-menu-wrap li ul li a:hover { color: #fff !important; background: rgba(227,24,55,0.15) !important; padding-left: 22px !important; }
+        .mobile-menu-icon i { color: #04223e !important; font-size: 22px !important; }
+        .footer-section { border-top: 3px solid #1b5e20; }
+        .section-heading .hl { color: #1b5e20 !important; }
+        .about-img-info { background: #1b5e20 !important; }
+        @keyframes ctaFlash {
+            0%   { background: #e31837; border-color: #e31837; box-shadow: 0 0 0 0 rgba(227,24,55,0.7); transform: scale(1); }
+            30%  { background: #e31837; border-color: #e31837; box-shadow: 0 0 14px 6px rgba(227,24,55,0.5); transform: scale(1.04); }
+            50%  { background: #1a237e; border-color: #1a237e; box-shadow: 0 0 14px 6px rgba(26,35,126,0.5); transform: scale(1); }
+            70%  { background: #1a237e; border-color: #1a237e; box-shadow: 0 0 14px 6px rgba(26,35,126,0.5); transform: scale(1.04); }
+            100% { background: #e31837; border-color: #e31837; box-shadow: 0 0 0 0 rgba(227,24,55,0.7); transform: scale(1); }
+        }
+        .book-cta-btn {
+            animation: ctaFlash 2.4s ease-in-out infinite !important;
+            color: #fff !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px !important;
+            transition: none !important;
+        }
+        .book-cta-btn:hover {
+            animation-play-state: paused !important;
+            background: #e31837 !important;
+            border-color: #e31837 !important;
+            color: #fff !important;
+        }
+        /* ── Page hero overlay ── */
+        .page-header {
+            position: relative;
+        }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(4,34,62,0.52) 45%, rgba(4,34,62,0.18) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        /* ── CTA "Ready to Partner" overlay ── */
+        .cta-section .cta-wrapper {
+            position: relative;
+        }
+        .cta-section .cta-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(4,34,62,0.55);
+            z-index: 0;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .cta-section .cta-wrapper > * {
+            position: relative;
+            z-index: 1;
+        }
+        /* ════════════════════════════════════
+           MOBILE NAVBAR — responsive fixes
+        ════════════════════════════════════ */
+        @media (max-width: 992px) {
+            .gogo-topnav-links { display: none !important; }
+            .gogo-topbar-inner { flex-wrap: nowrap; justify-content: space-between; }
+            .main-header-wapper { min-height: 64px !important; }
+            .site-logo { padding: 8px 16px 8px 0 !important; border-right: 1px solid #eee !important; margin-right: 0 !important; }
+            .site-logo img { width: 110px !important; }
+            .header-menu-wrap .nav-menu { display: none !important; }
+            .header-menu-wrap { min-height: 64px !important; padding: 0 !important; justify-content: flex-end !important; }
+            .menu-right-item .mobile-menu-icon {
+                display: flex !important; background-color: #f0f3f7 !important;
+                border-radius: 50% !important; width: 40px !important; height: 40px !important;
+                align-items: center !important; justify-content: center !important;
+                cursor: pointer !important; margin-left: 10px !important;
+            }
+            .mobile-menu-icon i { color: #04223e !important; font-size: 20px !important; }
+            .book-cta-btn { display: none !important; }
+            .mobile-navigation-menu {
+                background: #ffffff !important; position: fixed !important;
+                top: 0 !important; left: -100% !important;
+                width: 300px !important; max-width: 85vw !important;
+                height: 100vh !important; padding: 80px 0 40px !important;
+                box-shadow: 4px 0 24px rgba(0,0,0,0.18) !important;
+                overflow-y: auto !important; z-index: 9999 !important;
+                transition: left 0.3s ease !important;
+                display: block !important; visibility: hidden !important; opacity: 0 !important;
+            }
+            .open-mobile-menu.mobile-navigation-menu { left: 0 !important; visibility: visible !important; opacity: 1 !important; }
+            .mobile-navigation-menu .nav-menu,
+            .mobile-navigation-menu ul { display: block !important; flex-direction: unset !important; list-style: none !important; padding: 0 !important; margin: 0 !important; }
+            .mobile-navigation-menu ul li { display: block !important; position: relative !important; padding: 0 !important; margin: 0 !important; border-bottom: 1px solid #f0f3f7 !important; }
+            .mobile-navigation-menu ul li > a { display: block !important; color: #04223e !important; font-size: 15px !important; font-weight: 600 !important; padding: 14px 24px !important; text-decoration: none !important; }
+            .mobile-navigation-menu ul li > a:hover { color: #e31837 !important; background: #f8f9fa !important; }
+            .mobile-navigation-menu ul li > ul { display: none !important; }
+            .mobile-navigation-menu ul li.dropdown-open > ul { display: block !important; }
+            .mobile-navigation-menu li li { border-bottom: none !important; }
+            .mobile-navigation-menu li li > a { color: #666 !important; font-size: 14px !important; font-weight: 500 !important; padding: 11px 24px 11px 40px !important; background: #f8fafc !important; }
+            .mobile-navigation-menu li li > a:hover { color: #e31837 !important; background: #f0f3f7 !important; }
+            .mobile-navigation-menu ul li.dropdown_menu > a { border-left: 3px solid #e31837 !important; }
+            .mobile-navigation-menu .dropdown-plus { position: absolute !important; top: 0 !important; right: 0 !important; width: 50px !important; height: 48px !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+            #mobile-menu-close { background: none !important; border: none !important; color: #04223e !important; position: absolute !important; right: 14px !important; top: 14px !important; width: 44px !important; height: 44px !important; font-size: 22px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; cursor: pointer !important; z-index: 10 !important; }
+            #mobile-menu-close:hover { color: #e31837 !important; background: #f0f3f7 !important; }
+            .gogo-topbar-email { display: none !important; }
+            .gogo-social-bar { display: flex !important; }
+        }
+        @media (max-width: 480px) {
+            .site-logo img { width: 95px !important; }
+            .mobile-navigation-menu { width: 100% !important; max-width: 100vw !important; }
+        }
+    </style>
+</head>
+
+<body>
+ <div id="preloader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="preloader-bg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <!-- <div class="site-preloader preloader-text">
+            <span data-text="G">G</span>
+            <span data-text="O">O</span>
+            <span data-text="-">-</span>
+            <span data-text="G">G</span>
+            <span data-text="O">O</span>
+        </div> -->
+        <div class="site-preloader">
+            <video autoplay muted playsinline loop style="width:180px;height:auto;display:block;">
+                <source src="assets/img/gogo-photos/gogoloader.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <header class="main-header">
+
+        <!-- ── Top bar: contact + social + quick links ── -->
+        <div class="gogo-topbar">
+            <div class="container">
+                <div class="gogo-topbar-inner">
+                    <div class="gogo-topbar-left">
+                        <a href="tel:0115685340"><i class="fa-regular fa-phone"></i>011 568 5340</a>
+                        <span class="gogo-topbar-email"><i class="fa-regular fa-envelope-dot" style="color:#e31837;font-size:11px"></i>info@gogoshuttles.co.za</span>
+                    </div>
+                    <div class="gogo-topbar-right">
+                        <div class="gogo-topnav-links">
+                            <a href="faqs.html">Help</a>
+                            <span>|</span>
+                            <a href="contact.html">Support</a>
+                            <span>|</span>
+                            <a href="faqs.html">FAQ</a>
+                        </div>
+                        <div class="gogo-social-bar">
+                             <a href="https://www.facebook.com/GoGoShuttles1"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/go_go_shuttles/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Main nav row ── -->
+        <div class="container">
+            <div class="main-header-wapper">
+                <div class="site-logo">
+                    <a href="index.html"><img src="assets/img/gogo-logo.png" alt="GO-GO Shuttles Logo" /></a>
+                </div>
+                <div class="main-header-info">
+                    <div class="top-header"></div>
+                    <div class="header-menu-wrap">
+                        <ul class="nav-menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li>
+                                <a href="company.html">Company</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <!--<li><a href="company.html">Company</a></li>-->
+                                    <!--<li><a href="services-logistic.html">Staff Transport</a></li>-->
+                                    <li><a href="services-transportation.html">Shuttle Services</a></li>
+                                    <!--<li><a href="service-details.html">Service Details</a></li>-->
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="projects.html">Projects</a>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <div class="menu-right-item">
+                            <div class="mobile-menu-icon">
+                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                            </div>
+                            <a href="https://www.gogoshuttles.co.za/client-portal/" target="_blank" class="default-btn book-cta-btn d-none d-lg-block d-md-block">
+                                <i class="fa-regular fa-bus"></i>Book a Shuttle
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="popup-search-box">
+        <div class="box-inner-wrap d-flex align-items-center">
+            <form id="form" action="#" method="get" role="search">
+                <input id="popup-search" type="text" name="s" placeholder="Type keywords here...">
+                <button id="popup-search-button" type="submit" name="submit">
+                    <i class="fa-sharp fa-light fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <div class="search-close"><i class="fa-regular fa-xmark"></i></div>
+        </div>
+    </div>
+
+    <div id="searchbox-overlay"></div>
+
+    <!-- ══════════════════════════════════
+         PAGE HEADER
+    ══════════════════════════════════ -->
+    <section class="page-header" style="background-image:url('assets/img/gogo-photos/abouthero.jpg'); background-size:cover; background-position:center center;">
+        <div class="container">
+            <div class="page-header-info">
+                <h4>Who We Are</h4>
+                <h2>Our Story, Our <br>Mission &amp; Our <span>Values!</span></h2>
+                <!--<p>A proudly South African, 100% Black-owned company built on purpose — <br>serving people, businesses and communities with dignity.</p>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         OUR STORY
+    ══════════════════════════════════ -->
+    <section class="about-section padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-img-wrap mt-50">
+                        <img class="wow fade-in-left" data-wow-delay="100ms" src="assets/img/gogo-photos/scania4.jpg" alt="GO-GO Shuttles Scania Fleet">
+                        <img class="wow fade-in-bottom" data-wow-delay="300ms" src="assets/img/gogo-photos/scania2.jpg" alt="GO-GO Shuttles Scania On Route">
+                        <div class="about-img-info">Est. Since 2019</div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-heading mb-30">
+                        <h3 class="sub-heading is-border border-anim">Our Story<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                        <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Born from a Purpose, <br>Built for <span class="hl">People!</span></h2>
+                        <p class="text-anim" data-effect="fade-in-bottom" data-ease="power4.out">GO-GO Shuttles (Pty) Ltd was founded with a clear mission: to provide South Africa's corporate sector with a passenger transport partner that puts people first. We saw a gap — unreliable, unsafe, and undignified commuter transport was costing employees their time, energy, and wellbeing every single day.</p>
+                        <p style="margin-top:15px; color:#555;">We set out to change that. Today, GO-GO Shuttles operates a modern, GPS-tracked fleet across Gauteng, serving some of the country's leading corporates, institutions and event organisers. Every journey we operate is a commitment to our founding belief: that transport done right transforms lives.</p>
+                        <p style="margin-top:15px; color:#555;">As a 100% Black-owned and managed company, we are proud contributors to South Africa's transformation agenda — holding a B-BBEE Level 1 status and actively investing in employment equity, skills development, and enterprise upliftment.</p>
+                    </div>
+                    <div class="row gy-3 mt-10">
+                        <div class="col-sm-6">
+                            <div style="background:#f8f9fa; border-left:4px solid #e31837; padding:18px 20px; border-radius:6px;">
+                                <h4 style="color:#04223e; font-size:15px; font-weight:700; margin-bottom:6px;"><i class="fa-regular fa-bullseye-arrow" style="color:#e31837; margin-right:8px;"></i>Our Mission</h4>
+                                <p style="font-size:13.5px; color:#555; margin:0;">To deliver efficient, safe and reliable passenger transport that exceeds client expectations — every route, every day.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div style="background:#f8f9fa; border-left:4px solid #04223e; padding:18px 20px; border-radius:6px;">
+                                <h4 style="color:#04223e; font-size:15px; font-weight:700; margin-bottom:6px;"><i class="fa-regular fa-eye" style="color:#04223e; margin-right:8px;"></i>Our Vision</h4>
+                                <p style="font-size:13.5px; color:#555; margin:0;">To be Southern Africa's most trusted, technology-driven passenger transport company — recognised for excellence and empowerment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CORE VALUES
+    ══════════════════════════════════ -->
+    <section class="process-section bg-grey padding">
+        <div class="map-pattern"></div>
+        <div class="container">
+            <div class="section-heading text-center mb-40">
+                <h3 class="sub-heading is-border border-anim">What Drives Us<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Our Core <span class="hl">Values!</span></h2>
+                <p class="text-anim" data-effect="fade-in-bottom" data-ease="power4.out">Every decision we make is anchored in these four principles.</p>
+            </div>
+            <div class="row process-wrapper gy-lg-0 gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-item wow fade-in-bottom" data-wow-delay="100ms">
+                        <div class="process-icon">
+                            <i class="logis logis-truck-2"></i>
+                            <span>01</span>
+                        </div>
+                        <div class="process-content">
+                            <h3>Safety First</h3>
+                            <p>Every vehicle is roadworthy. Every driver is trained, uniformed and PDP-certified. No compromises — ever.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-item wow fade-in-bottom" data-wow-delay="250ms">
+                        <div class="process-icon">
+                            <i class="logis logis-map-1"></i>
+                            <span>02</span>
+                        </div>
+                        <div class="process-content">
+                            <h3>Reliability</h3>
+                            <p>On-time departure, on-time arrival. Our clients build their operations around our schedules because we always deliver.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-item wow fade-in-bottom" data-wow-delay="400ms">
+                        <div class="process-icon">
+                            <i class="logis logis-worldwide"></i>
+                            <span>03</span>
+                        </div>
+                        <div class="process-content">
+                            <h3>Dignity</h3>
+                            <p>Every passenger deserves to travel in comfort and respect. We treat every commute as a premium experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-item wow fade-in-bottom" data-wow-delay="550ms">
+                        <div class="process-icon">
+                            <i class="logis logis-loader"></i>
+                            <span>04</span>
+                        </div>
+                        <div class="process-content">
+                            <h3>Transformation</h3>
+                            <p>As a B-BBEE Level 1 contributor, we are committed to driving real economic empowerment in South Africa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         WHY CHOOSE US  (dark bg feature strip)
+    ══════════════════════════════════ -->
+    <section class="content-features bg-dark padding">
+        <div class="map-pattern"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-40">
+                    <div class="section-heading white">
+                        <h3 class="sub-heading is-border border-anim">Why GO-GO Shuttles?<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                        <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">The Difference Is <br>In The <span class="hl">Detail!</span></h2>
+                        <p class="text-anim" data-effect="fade-in-bottom" data-ease="power4.out">We don't just move people — we deliver experiences. Here's what sets us apart from every other transport provider in the market.</p>
+                        <a href="contact.html" class="default-btn mt-20 wow fade-in-bottom" data-wow-delay="200ms">Get a Quote</a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:24px 22px;">
+                                <i class="logis logis-map-1" style="font-size:32px; color:#e31837; display:block; margin-bottom:12px;"></i>
+                                <h4 style="color:#fff; font-size:16px; margin-bottom:8px;">Live GPS Fleet Tracking</h4>
+                                <p style="color:#8899aa; font-size:13.5px; margin:0;">Real-time monitoring of every vehicle. Know exactly where your shuttle is at any point in the journey.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:24px 22px;">
+                                <i class="logis logis-truck-2" style="font-size:32px; color:#e31837; display:block; margin-bottom:12px;"></i>
+                                <h4 style="color:#fff; font-size:16px; margin-bottom:8px;">Modern, Maintained Fleet</h4>
+                                <p style="color:#8899aa; font-size:13.5px; margin:0;">From 10-seater minibuses to luxury coaches — all regularly serviced, licensed, and roadworthy.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:24px 22px;">
+                                <i class="logis logis-package" style="font-size:32px; color:#e31837; display:block; margin-bottom:12px;"></i>
+                                <h4 style="color:#fff; font-size:16px; margin-bottom:8px;">Bespoke Route Planning</h4>
+                                <p style="color:#8899aa; font-size:13.5px; margin:0;">No one-size-fits-all. Every client gets a customised route, schedule, and fleet assignment.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:24px 22px;">
+                                <i class="logis logis-worldwide" style="font-size:32px; color:#e31837; display:block; margin-bottom:12px;"></i>
+                                <h4 style="color:#fff; font-size:16px; margin-bottom:8px;">Gauteng-Wide Coverage</h4>
+                                <p style="color:#8899aa; font-size:13.5px; margin:0;">Sandton, Rosebank, Rivonia, Hyde Park, Midrand, Centurion and all major Gauteng business nodes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         COMPLIANCE & CREDENTIALS
+    ══════════════════════════════════ -->
+    <section class="padding" style="background:#fff;">
+        <div class="container">
+            <div class="section-heading text-center mb-40">
+                <h3 class="sub-heading is-border border-anim">Compliance &amp; Credentials<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Fully Accredited &amp; <br><span class="hl">Regulation-Compliant!</span></h2>
+                <p class="text-anim" data-effect="fade-in-bottom" data-ease="power4.out">We operate with complete transparency and meet every legal, regulatory and empowerment requirement applicable to our industry.</p>
+            </div>
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div style="text-align:center; padding:30px 20px; border:2px solid #f0f3f7; border-radius:12px; transition:border-color 0.3s;" class="wow fade-in-bottom" data-wow-delay="100ms">
+                        <div style="width:70px;height:70px;background:#e31837;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+                            <i class="logis logis-loader" style="font-size:28px;color:#fff;"></i>
+                        </div>
+                        <h4 style="color:#04223e; font-size:17px; font-weight:700; margin-bottom:10px;">B-BBEE Level 1</h4>
+                        <p style="font-size:13.5px; color:#666;">100% Black-owned and managed. Top-tier contributor to Broad-Based Black Economic Empowerment in South Africa.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div style="text-align:center; padding:30px 20px; border:2px solid #f0f3f7; border-radius:12px;" class="wow fade-in-bottom" data-wow-delay="250ms">
+                        <div style="width:70px;height:70px;background:#04223e;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+                            <i class="logis logis-truck-2" style="font-size:28px;color:#fff;"></i>
+                        </div>
+                        <h4 style="color:#04223e; font-size:17px; font-weight:700; margin-bottom:10px;">Department of Transport</h4>
+                        <p style="font-size:13.5px; color:#666;">Fully registered operating permit holder. All vehicles carry valid roadworthy certificates and are licensed for public passenger transport.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div style="text-align:center; padding:30px 20px; border:2px solid #f0f3f7; border-radius:12px;" class="wow fade-in-bottom" data-wow-delay="400ms">
+                        <div style="width:70px;height:70px;background:#e31837;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+                            <i class="logis logis-map-1" style="font-size:28px;color:#fff;"></i>
+                        </div>
+                        <h4 style="color:#04223e; font-size:17px; font-weight:700; margin-bottom:10px;">POPIA Compliant</h4>
+                        <p style="font-size:13.5px; color:#666;">We handle all passenger and client data in strict accordance with the Protection of Personal Information Act (POPIA).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         STATS COUNTER
+    ══════════════════════════════════ -->
+    <section class="content-features bg-dark padding-bottom" style="padding-top:50px;">
+        <div class="container">
+            <div class="counter-wrap">
+                <div class="counter-item wow fade-in-bottom" data-wow-delay="100ms">
+                    <div class="counter-icon"><i class="logis logis-map-1"></i></div>
+                    <div class="counter-content">
+                        <h3><span class="odometer" data-count="12">00</span>+</h3>
+                        <h4>Sectors Served</h4>
+                    </div>
+                </div>
+                <div class="counter-item wow fade-in-bottom" data-wow-delay="250ms">
+                    <div class="counter-icon"><i class="logis logis-truck-2"></i></div>
+                    <div class="counter-content">
+                        <h3><span class="odometer" data-count="20">00</span>+</h3>
+                        <h4>Vehicles in Fleet</h4>
+                    </div>
+                </div>
+                <div class="counter-item wow fade-in-bottom" data-wow-delay="400ms">
+                    <div class="counter-icon"><i class="logis logis-loader"></i></div>
+                    <div class="counter-content">
+                        <h3><span class="odometer" data-count="5">00</span>+</h3>
+                        <h4>Years Experience</h4>
+                    </div>
+                </div>
+                <div class="counter-item wow fade-in-bottom" data-wow-delay="550ms">
+                    <div class="counter-icon"><i class="logis logis-worldwide"></i></div>
+                    <div class="counter-content">
+                        <h3><span class="odometer" data-count="1">00</span></h3>
+                        <h4>B-BBEE Level</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         LEADERSHIP / TEAM
+    ══════════════════════════════════ -->
+    <section class="team-section position-relative padding">
+        <!-- <div class="cargo-container wow fade-in-top" data-wow-delay="100ms"></div> -->
+        <div class="container">
+            <div class="section-heading text-center mb-40">
+                <h3 class="sub-heading is-border border-anim">The People Behind GO-GO<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Leadership &amp; <span class="hl">Operations</span><br>Team!</h2>
+                <p class="text-anim" data-effect="fade-in-bottom" data-ease="power4.out">Our team of transport professionals brings decades of combined experience <br>in logistics, fleet management, and passenger safety.</p>
+            </div>
+            <div class="row gy-lg-0 gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item wow fade-in-bottom" data-wow-delay="100ms">
+                        <div class="team-thumb">
+                            <img src="assets/img/gogo-photos/founder.jpg" alt="Executive Director">
+                            <ul class="team-social">
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h4 class="position">Executive Director</h4>
+                            <h3><a href="#">Founder &amp; CEO</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item wow fade-in-bottom" data-wow-delay="250ms">
+                        <div class="team-thumb">
+                            <img src="assets/img/gogo-photos/operationsmanager.jpg" alt="Operations Manager">
+                            <ul class="team-social">
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h4 class="position">Fleet &amp; Operations</h4>
+                            <h3><a href="#">Operations Manager</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item wow fade-in-bottom" data-wow-delay="400ms">
+                        <div class="team-thumb">
+                            <img src="assets/img/gogo-photos/headofclient.jpg" alt="Client Relations">
+                            <ul class="team-social">
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h4 class="position">Client Relations</h4>
+                            <h3><a href="#">Head of Client Experience</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item wow fade-in-bottom" data-wow-delay="550ms">
+                        <div class="team-thumb">
+                            <img src="assets/img/gogo-photos/fleetcoordinator.jpg" alt="Fleet Coordinator">
+                            <ul class="team-social">
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h4 class="position">Dispatch &amp; Routing</h4>
+                            <h3><a href="#">Fleet Coordinator</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         FINAL CTA BANNER
+    ══════════════════════════════════ -->
+    <section class="cta-section padding-bottom">
+        <div class="container">
+            <div class="row cta-wrapper gx-0">
+                <div class="col-lg-6">
+                    <div class="section-heading white">
+                        <h3 class="sub-heading is-border border-anim" style="color:yellow">Ready to Partner With Us?<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                        <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Let's Build Your <br>Transport <span class="hl" style="color:yellow">Solution!</span></h2>
+                        <!--<p style="color:rgba(255,255,255,0.75); margin-bottom:24px;">Talk to our team about your routes, headcount and schedule — we'll design the perfect shuttle programme for your business.</p>-->
+                        <a href="contact.html" class="default-btn wow fade-in-bottom" data-wow-delay="200ms">Contact Us Today</a>
+                    </div>
+                </div>
+                <!-- <div class="cta-men wow fade-in-bottom" data-wow-delay="200ms"></div> -->
+            </div>
+            <div class="row promo-item-wrapper gx-0">
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-truck-3"></i>
+                        <div class="promo-content">
+                            <h3>Staff Transport</h3>
+                            <p>Daily employee transport tailored to shift times and pick-up routes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-map-1"></i>
+                        <div class="promo-content">
+                            <h3>Park-and-Ride</h3>
+                            <p>Seamless hub-to-venue shuttles for businesses and large events.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-airplane-flying"></i>
+                        <div class="promo-content">
+                            <h3>Corporate Events</h3>
+                            <p>Bespoke transport for conferences, exhibitions and private charters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         FOOTER
+    ══════════════════════════════════ -->
+    <footer class="footer-section">
+        <div class="map-pattern"></div>
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row gy-lg-0 gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <a href="index.html" class="footer-logo"><img src="assets/img/gogo-logo.png" alt="GO-GO Shuttles"></a>
+                            <p>A proudly South African, 100% Black-owned company delivering premium passenger and staff transport solutions.</p>
+                            <ul class="social-share">
+                                <a href="https://www.facebook.com/GoGoShuttles1"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/go_go_shuttles/"><i class="fa-brands fa-instagram"></i></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget widget-links">
+                            <div class="widget-title"><h3>Company</h3></div>
+                            <ul class="footer-links">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="projects.html">Our Services</a></li>
+                               
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-title"><h3>Get In Touch</h3></div>
+                            <ul class="footer-contact-info">
+                                <li>
+                                    <p><span>Address:</span>100 Western Service Rd,<br>Woodmead, Sandton, 2080</p>
+                                </li>
+                                <li>
+                                    <p><span>Phone:</span>011 568 5340 / 064 540 8024</p>
+                                </li>
+                                <li>
+                                    <p><span>Email:</span>info@gogoshuttles.co.za</p>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-title"><h3>Newsletter Signup</h3></div>
+                            <form action="#" class="subscribe-form" novalidate="true">
+                                <div class="mc-fields">
+                                    <input class="form-control" type="email" name="EMAIL" placeholder="Your Email" required="">
+                                    <input type="hidden" name="action" value="mailchimpsubscribe">
+                                    <button class="submit"><i class="fa-regular fa-arrow-right-long"></i></button>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div id="subscribe-result">
+                                    <div class="subscription-success"></div>
+                                    <div class="subscription-error"></div>
+                                </div>
+                            </form>
+                            <p class="mt-20">Subscribe for transport tips, service updates and special offers.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div><!-- end footer-wrapper -->
+    <div class="copyright-area">
+        © <span id="currentYear"></span> GO-GO Shuttles (Pty) Ltd, All Rights Reserved. | 100% Black-Owned | B-BBEE Level 1 | <a href="https://www.gogoshuttles.co.za" target="_blank">www.gogoshuttles.co.za</a>
+    </div>
+    </footer>    <div id="scrollup">
+        <button id="scroll-top" class="scroll-to-top"><i class="fa-regular fa-arrow-up"></i></button>
+    </div>
+
+    <script src="assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/lib/gsap/gsap.min.js"></script>
+    <script src="assets/lib/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/lib/gsap/split-type.min.js"></script>
+    <script src="assets/js/vendor/lenis.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/vendor/venobox.min.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/mailchimp.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
