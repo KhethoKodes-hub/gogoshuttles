@@ -513,6 +513,272 @@
             right: -18px !important;
             z-index: 20 !important;
         }
+
+        /* ════════════════════════════════════
+           UPDATED: 10TH ANNIVERSARY — RED THEME
+        ════════════════════════════════════ */
+        .anniversary-section {
+            position: relative;
+            background: #04223e;
+            overflow: hidden;
+            padding: 90px 0 0;
+        }
+        #anniversary-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .anniversary-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .anniv-left {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .anniv-decade-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .anniv-since {
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: #e31837;
+            font-weight: 700;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.6s 0.2s, transform 0.6s 0.2s;
+        }
+        .anniv-years-label {
+            font-size: 13px;
+            letter-spacing: 8px;
+            color: #e31837;
+            font-weight: 700;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s 0.4s, transform 0.6s 0.4s;
+        }
+        .anniv-number {
+            display: flex;
+            line-height: 1;
+            font-family: 'Georgia', serif;
+            font-size: clamp(130px, 18vw, 200px);
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 3px #e31837;
+            position: relative;
+            filter: drop-shadow(0 0 30px rgba(227,24,55,0.3));
+        }
+        .anniv-one {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.7s 0.1s, transform 0.7s 0.1s;
+            display: inline-block;
+        }
+        .anniv-zero {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.7s 0.2s, transform 0.7s 0.2s;
+            display: inline-block;
+        }
+        .anniversary-section.anniv-visible .anniv-one,
+        .anniversary-section.anniv-visible .anniv-zero {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .anniversary-section.anniv-visible .anniv-since,
+        .anniversary-section.anniv-visible .anniv-years-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .anniv-divider {
+            width: 2px;
+            height: 280px;
+            background: linear-gradient(to bottom, transparent, #e31837 30%, #e31837 70%, transparent);
+            flex-shrink: 0;
+            opacity: 0;
+            transition: opacity 0.8s 0.5s;
+        }
+        .anniversary-section.anniv-visible .anniv-divider { opacity: 1; }
+        .anniv-right {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s 0.4s, transform 0.8s 0.4s;
+        }
+        .anniversary-section.anniv-visible .anniv-right {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .anniv-eyebrow {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #e31837;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 14px;
+            font-family: Arial, sans-serif;
+        }
+        .anniv-headline {
+            font-size: clamp(28px, 3.5vw, 46px);
+            color: #ffffff;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+        }
+        .anniv-headline span { color: #e31837; }
+        .anniv-body {
+            font-size: 15px;
+            color: rgba(176,196,222,0.9);
+            line-height: 1.75;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .anniv-stats {
+            display: flex;
+            gap: 36px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        .anniv-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .anniv-stat-num {
+            font-size: 38px;
+            font-weight: 900;
+            color: #e31837;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .anniv-stat-num::after { content: '+'; font-size: 24px; }
+        .anniv-stat:first-child .anniv-stat-num::after { content: ''; }
+        .anniv-stat-label {
+            font-size: 11px;
+            color: rgba(176,196,222,0.75);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: Arial, sans-serif;
+        }
+        .anniv-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .anniv-btn {
+            display: inline-block;
+            padding: 13px 34px;
+            background: #e31837;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            font-family: Arial, sans-serif;
+        }
+        .anniv-btn:hover {
+            background: #ffffff;
+            color: #04223e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(227,24,55,0.35);
+        }
+        .anniv-badge-inline {
+            width: 90px;
+            height: 90px;
+            flex-shrink: 0;
+        }
+        .anniv-badge-inline svg {
+            width: 100%;
+            height: 100%;
+            animation: annivSpin 14s linear infinite;
+        }
+        @keyframes annivSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .anniv-ribbon {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(90deg, #b71c1c, #e31837 30%, #f44336 50%, #e31837 70%, #b71c1c);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 40px;
+            font-family: Arial, sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: #ffffff;
+        }
+        .anniv-ribbon-dots {
+            font-size: 10px;
+            letter-spacing: 4px;
+            opacity: 0.5;
+            overflow: hidden;
+            white-space: nowrap;
+            flex: 1;
+            text-align: center;
+        }
+        .anniv-float-badge {
+            position: fixed;
+            bottom: 80px;
+            left: 20px;
+            width: 76px;
+            height: 76px;
+            z-index: 9000;
+            opacity: 0;
+            transform: scale(0.6) rotate(-20deg);
+            transition: opacity 0.5s, transform 0.5s;
+            pointer-events: none;
+            cursor: pointer;
+        }
+        .anniv-float-badge.anniv-badge-show {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            pointer-events: auto;
+        }
+        .anniv-float-badge svg {
+            width: 100%;
+            height: 100%;
+            animation: annivSpin 12s linear infinite;
+            filter: drop-shadow(0 4px 14px rgba(227,24,55,0.5));
+        }
+        .anniv-float-badge:hover svg {
+            animation-play-state: paused;
+            filter: drop-shadow(0 6px 20px rgba(227,24,55,0.8));
+        }
+        @media (max-width: 900px) {
+            .anniversary-inner {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+                padding-bottom: 60px;
+            }
+            .anniv-divider { width: 80px; height: 2px; }
+            .anniv-stats { justify-content: center; }
+            .anniv-cta-row { justify-content: center; }
+            .anniv-body { max-width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .anniversary-section { padding-top: 60px; }
+            .anniv-number { font-size: 110px; }
+            .anniv-float-badge { width: 60px; height: 60px; bottom: 70px; left: 12px; }
+        }
     </style>
 </head>
 
@@ -522,13 +788,6 @@
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
             <path id="preloader-bg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
         </svg>
-        <!-- <div class="site-preloader preloader-text">
-            <span data-text="G">G</span>
-            <span data-text="O">O</span>
-            <span data-text="-">-</span>
-            <span data-text="G">G</span>
-            <span data-text="O">O</span>
-        </div> -->
         <div class="site-preloader">
             <video autoplay muted playsinline loop style="width:180px;height:auto;display:block;">
                 <source src="assets/img/gogo-photos/gogoloader.mp4" type="video/mp4">
@@ -577,14 +836,11 @@
                             <!--<li>
                                 <a href="company.html">Company</a>
                                 <ul>
-                                    <li><a href="about.html">About Us</a></li>-->
-                                    <!--<li><a href="company.html">Company</a></li>-->
-                                    <!--<li><a href="services-logistic.html">Staff Transport</a></li>-->
-                                    <!--<li><a href="services-transportation.html">Shuttle Services</a></li>-->
-                                    <!--<li><a href="service-details.html">Service Details</a></li>-->
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="services-transportation.html">Shuttle Services</a></li>
                                 </ul>
                             </li>
-                            <!--<li>
+                            <li>
                                 <a href="projects.html">Projects</a>
                             </li>
                             <li><a href="contact.html">Contact</a></li>
@@ -627,10 +883,9 @@
                 <!-- Slide 1 -->
                 <div class="swiper-slide">                                                                                                                                                                          
                     <div class="slider-img-wrap">
-                        <div class="slider-img"><img src="assets/img/gogo-photos/hero111.jpg" alt="GO-GO Shuttles Fleet" style="object-position: center 35%;"></div>
+                        <div class="slider-img"><img src="assets/img/gogo-photos/hero3.jpg" alt="GO-GO Shuttles Fleet" ></div>
                         <div class="slider-road"></div>
                         <div class="corner-shape" data-animation="fade-in-left" data-duration="1.5s" data-delay="0.3s"></div>
-                        <!-- <div class="slider-badge" data-animation="bounce-in" data-duration="1.5s" data-delay="1s"></div> -->
                     </div>
                     <div class="slider-content-wrap d-flex align-items-center text-left">
                         <div class="container">
@@ -664,7 +919,6 @@
                         <div class="slider-img"><img src="assets/img/gogo-photos/hero2.jpg" alt="GO-GO Shuttles Corporate Transport"></div>
                         <div class="slider-road"></div>
                         <div class="corner-shape" data-animation="fade-in-left" data-duration="1.5s" data-delay="0.3s"></div>
-                        <!-- <div class="slider-badge" data-animation="bounce-in" data-duration="1.5s" data-delay="1s"></div> -->
                     </div>
                     <div class="slider-content-wrap d-flex align-items-center text-left">
                         <div class="container">
@@ -695,10 +949,9 @@
                 <!-- Slide 3 -->
                 <div class="swiper-slide">
                     <div class="slider-img-wrap">
-                        <div class="slider-img"><img src="assets/img/gogo-photos/hero3.jpg" alt="GO-GO Shuttles Sandton"></div>
+                        <div class="slider-img"><img src="assets/img/gogo-photos/staff1.jpg" alt="GO-GO Shuttles Sandton" style="object-position: center 23%;"></div>
                         <div class="slider-road"></div>
                         <div class="corner-shape" data-animation="fade-in-left" data-duration="1.5s" data-delay="0.3s"></div>
-                        <!-- <div class="slider-badge" data-animation="bounce-in" data-duration="1.5s" data-delay="1s"></div> -->
                     </div>
                     <div class="slider-content-wrap d-flex align-items-center text-left">
                         <div class="container">
@@ -738,7 +991,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <!-- CHANGE 2: replaced stacked 3-image layout with auto-cycling image switcher -->
                     <div class="about-img-wrap about-img-switcher">
                         <div class="aimg-stack">
                             <img class="aimg active" src="assets/img/gogo-photos/scania5.jpg" alt="GO-GO Shuttles Fleet">
@@ -794,7 +1046,7 @@
 
     <!-- ══════════════════════════════════
          SERVICES SECTION
-    ══════════════════════════════════ -->
+    ══════════════════════════════════ 
     <section class="service-section bg-grey padding">
         <div class="map-pattern"></div>
         <div class="container">
@@ -845,7 +1097,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- ══════════════════════════════════
          RUNNING TEXT
@@ -862,6 +1114,184 @@
             </div>
         </div>
     </section>
+
+    <!-- ══════════════════════════════════
+         10TH ANNIVERSARY SECTION — RED THEME
+    ══════════════════════════════════ -->
+    <section class="anniversary-section" id="anniversary">
+        <canvas id="anniversary-canvas"></canvas>
+        <div class="anniversary-inner">
+            <div class="anniv-left">
+                <div class="anniv-decade-wrap">
+                    <span class="anniv-since">EST. 2015</span>
+                    <div class="anniv-number" id="anniv-number">
+                        <span class="anniv-one">1</span><span class="anniv-zero">0</span>
+                    </div>
+                    <span class="anniv-years-label">YEARS</span>
+                </div>
+            </div>
+            <div class="anniv-divider"></div>
+            <div class="anniv-right">
+                <p class="anniv-eyebrow">A Decade of Excellence</p>
+                <h2 class="anniv-headline">Ten Years of Moving<br><span>South Africa Forward.</span></h2>
+                <p class="anniv-body">Since 2015, GO-GO Shuttles has been the trusted transport partner for corporations, schools, mining operations and tour operators across Gauteng. A decade later, our commitment to safety, reliability and dignity remains unchanged.</p>
+                <div class="anniv-stats">
+                    <div class="anniv-stat">
+                        <span class="anniv-stat-num" data-target="10">0</span>
+                        <span class="anniv-stat-label">Years in Business</span>
+                    </div>
+                    <div class="anniv-stat">
+                        <span class="anniv-stat-num" data-target="12">0</span>
+                        <span class="anniv-stat-label">Sectors Served</span>
+                    </div>
+                    <div class="anniv-stat">
+                        <span class="anniv-stat-num" data-target="1">0</span>
+                        <span class="anniv-stat-label">B-BBEE Level</span>
+                    </div>
+                </div>
+                <div class="anniv-cta-row">
+                    <a href="about.html" class="anniv-btn">Our Story</a>
+                    <div class="anniv-badge-inline">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <path id="anniv-circle-text" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                            </defs>
+                            <text font-size="11.5" fill="#e31837" font-family="Arial,sans-serif" font-weight="700" letter-spacing="2">
+                                <textPath href="#anniv-circle-text">GO-GO SHUTTLES • CELEBRATING 10 YEARS •</textPath>
+                            </text>
+                            <text x="50" y="45" text-anchor="middle" font-size="13" fill="#e31837" font-family="Arial,sans-serif" font-weight="900">10</text>
+                            <text x="50" y="60" text-anchor="middle" font-size="8" fill="#ffffff" font-family="Arial,sans-serif" letter-spacing="1">YEARS</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="anniv-ribbon">
+            <span>2015</span>
+            <span class="anniv-ribbon-dots"></span>
+            <span>2025</span>
+        </div>
+    </section>
+
+    <div class="anniv-float-badge" id="anniv-float-badge" title="Celebrating 10 Years!">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <path id="fbc" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+            </defs>
+            <circle cx="50" cy="50" r="48" fill="#04223e" stroke="#e31837" stroke-width="2.5"/>
+            <text font-size="10.5" fill="#e31837" font-family="Arial,sans-serif" font-weight="700" letter-spacing="1.8">
+                <textPath href="#fbc">GO-GO SHUTTLES • 10 YEARS •</textPath>
+            </text>
+            <text x="50" y="48" text-anchor="middle" font-size="22" fill="#e31837" font-family="Arial,sans-serif" font-weight="900">10</text>
+            <text x="50" y="63" text-anchor="middle" font-size="8.5" fill="#ffffff" font-family="Arial,sans-serif" letter-spacing="2">YEARS</text>
+        </svg>
+    </div>
+
+    <script>
+    /* ── 10th Anniversary JS ── */
+    (function () {
+
+        var canvas = document.getElementById('anniversary-canvas');
+        var ctx = canvas ? canvas.getContext('2d') : null;
+        var particles = [];
+        var raf;
+
+        function resizeCanvas() {
+            if (!canvas) return;
+            canvas.width  = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+
+        function makeParticle() {
+            return {
+                x: Math.random() * (canvas ? canvas.width : 800),
+                y: (canvas ? canvas.height : 400) + 10,
+                r: Math.random() * 2.5 + 0.5,
+                speed: Math.random() * 0.6 + 0.3,
+                opacity: Math.random() * 0.6 + 0.2,
+                drift: (Math.random() - 0.5) * 0.4
+            };
+        }
+
+        function tickCanvas() {
+            if (!ctx || !canvas) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (particles.length < 80) particles.push(makeParticle());
+
+            particles.forEach(function (p, i) {
+                p.y  -= p.speed;
+                p.x  += p.drift;
+                p.opacity -= 0.0015;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(227,24,55,' + Math.max(0, p.opacity) + ')';
+                ctx.fill();
+
+                if (p.y < -10 || p.opacity <= 0) particles[i] = makeParticle();
+            });
+
+            raf = requestAnimationFrame(tickCanvas);
+        }
+
+        var section = document.getElementById('anniversary');
+        var triggered = false;
+
+        function onScroll() {
+            if (triggered || !section) return;
+            var rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.82) {
+                triggered = true;
+                section.classList.add('anniv-visible');
+                animateStats();
+                resizeCanvas();
+                tickCanvas();
+                window.removeEventListener('scroll', onScroll);
+            }
+        }
+
+        function animateStats() {
+            document.querySelectorAll('.anniv-stat-num').forEach(function (el) {
+                var target = parseInt(el.dataset.target, 10);
+                var start  = 0;
+                var dur    = 1600;
+                var startT = null;
+                function step(ts) {
+                    if (!startT) startT = ts;
+                    var prog = Math.min((ts - startT) / dur, 1);
+                    var ease = 1 - Math.pow(1 - prog, 3);
+                    el.textContent = Math.round(ease * target);
+                    if (prog < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        }
+
+        var floatBadge = document.getElementById('anniv-float-badge');
+        function onScrollBadge() {
+            if (!floatBadge) return;
+            if (window.scrollY > 300) {
+                floatBadge.classList.add('anniv-badge-show');
+            } else {
+                floatBadge.classList.remove('anniv-badge-show');
+            }
+        }
+
+        window.addEventListener('scroll', onScroll,      { passive: true });
+        window.addEventListener('scroll', onScrollBadge, { passive: true });
+        window.addEventListener('resize', resizeCanvas);
+
+        if (floatBadge && section) {
+            floatBadge.addEventListener('click', function () {
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+
+        onScroll();
+        onScrollBadge();
+    })();
+    </script>
 
     <!-- ══════════════════════════════════
          PROJECTS / SECTORS SECTION
@@ -1102,15 +1532,6 @@
     </section>
 
     <!-- ══════════════════════════════════
-         TEAM SECTION — COMMENTED OUT
-    ══════════════════════════════════ -->
-    <!--
-    <section class="team-section padding">
-        ...
-    </section>
-    -->
-
-    <!-- ══════════════════════════════════
          QUOTE / BOOKING FORM
     ══════════════════════════════════ -->
     <section class="quote-section padding">
@@ -1181,7 +1602,6 @@
          TESTIMONIALS
     ══════════════════════════════════ -->
     <section class="testimonial-section padding">
-        <!-- <div class="cargo-container wow fade-in-top" data-wow-delay="100ms"></div> -->
         <div class="map-pattern"></div>
         <div class="container">
             <div class="section-heading text-center mb-30">
@@ -1268,8 +1688,6 @@
          FOOTER
     ══════════════════════════════════ -->
     <footer class="footer-section">
-        <!-- map-pattern (cartoon houses animation) commented out -->
-        <!-- <div class="map-pattern"></div> -->
         <div class="footer-wrapper">
             <div class="container">
                 <div class="row gy-lg-0 gy-4">
@@ -1359,7 +1777,6 @@
     <script src="assets/js/quote-form.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- CHANGE 2: About image auto-cycling switcher script -->
     <script>
     (function () {
         var imgs, dots, cur = 0, timer, total;
@@ -1370,7 +1787,6 @@
             if (!imgs.length) return;
             total = imgs.length;
 
-            // Dot click
             dots.forEach(function (d) {
                 d.addEventListener('click', function () {
                     goTo(parseInt(this.dataset.idx));
@@ -1378,14 +1794,12 @@
                 });
             });
 
-            // Click stack to advance
             var stack = document.querySelector('.aimg-stack');
             if (stack) {
                 stack.addEventListener('click', function () {
                     goTo(cur + 1);
                     restartAuto();
                 });
-                // Hover: pause auto-cycle
                 stack.addEventListener('mouseenter', function () { clearInterval(timer); });
                 stack.addEventListener('mouseleave', function () { startAuto(); });
             }
