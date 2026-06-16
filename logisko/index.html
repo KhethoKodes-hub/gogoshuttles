@@ -49,7 +49,7 @@
         .wheel-front, .wheel-rear {
             animation: wheelSpin 0.7s linear infinite;
         }
-        /* running-truck footer taxis */
+        /* ── CHANGE 1: running-truck footer taxis COMMENTED OUT ──
         .running-truck {
             position: relative;
             height: 64px;
@@ -68,6 +68,7 @@
             from { left: -140px; }
             to   { left: 110%; }
         }
+        END COMMENTED OUT ── */
         /* Remove the old truck/container placeholders */
         .container-img { display: none !important; }
         /* ════════════════════════════════════
@@ -180,7 +181,17 @@
         /* Touch of green — subtle accent */
         .footer-section { border-top: 3px solid #1b5e20; }
         .section-heading .hl { color: #1b5e20 !important; }
-        .about-img-info { background: #1b5e20 !important; }
+        /* B-BBEE Level 1 vertical bar removed completely */
+        .about-img-info { display: none !important; }
+        /* Remove cartoon houses / cityscape background image from footer */
+        .footer-section,
+        .footer-section::before,
+        .footer-section::after,
+        .footer-wrapper,
+        .footer-wrapper::before,
+        .footer-wrapper::after {
+            background-image: none !important;
+        }
 
         /* Book a Shuttle navbar button — red ↔ navy blue flash */
         @keyframes ctaFlash {
@@ -441,6 +452,67 @@
             .gogo-topbar-left a { font-size: 11px !important; }
             .mobile-navigation-menu { width: 100% !important; max-width: 100vw !important; }
         }
+
+        /* ════════════════════════════════════
+           CHANGE 2 — About image switcher
+        ════════════════════════════════════ */
+        .about-img-switcher { position: relative !important; }
+        .aimg-stack {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+        .aimg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            pointer-events: none;
+            border-radius: 8px;
+        }
+        .aimg.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+        /* Dot indicators */
+        .aimg-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        .aimg-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.45);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+        .aimg-dot.active {
+            background: #e31837;
+            transform: scale(1.3);
+            border-color: #e31837;
+        }
+        /* Keep badge positioned correctly */
+        .about-img-switcher .about-img-info {
+            position: absolute !important;
+            bottom: -18px !important;
+            right: -18px !important;
+            z-index: 20 !important;
+        }
     </style>
 </head>
 
@@ -502,34 +574,33 @@
                     <div class="header-menu-wrap">
                         <ul class="nav-menu">
                             <li><a href="index.html">Home</a></li>
-                            <li>
+                            <!--<li>
                                 <a href="company.html">Company</a>
                                 <ul>
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="about.html">About Us</a></li>-->
                                     <!--<li><a href="company.html">Company</a></li>-->
                                     <!--<li><a href="services-logistic.html">Staff Transport</a></li>-->
-                                    <li><a href="services-transportation.html">Shuttle Services</a></li>
+                                    <!--<li><a href="services-transportation.html">Shuttle Services</a></li>-->
                                     <!--<li><a href="service-details.html">Service Details</a></li>-->
                                 </ul>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="projects.html">Projects</a>
                             </li>
                             <li><a href="contact.html">Contact</a></li>
-                        </ul>
                         <div class="menu-right-item">
                             <div class="mobile-menu-icon">
                                 <i class="fa-regular fa-ellipsis-vertical"></i>
                             </div>
                             <a href="https://www.gogoshuttles.co.za/client-portal/" target="_blank" class="default-btn book-cta-btn d-none d-lg-block d-md-block">
-                                <i class="fa-regular fa-bus"></i>Book a Shuttle
-                            </a>
+                                <i class="fa-regular fa-bus"></i>Quick quote
+                            </a>-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+ 
     </header>
 
     <div id="popup-search-box">
@@ -667,10 +738,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="about-img-wrap">
-                        <img class="wow fade-in-left" data-wow-delay="100ms" src="assets/img/gogo-photos/scania5.jpg" alt="GO-GO Shuttles Fleet">
-                        <img class="wow fade-in-bottom" data-wow-delay="300ms" src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/13-seater-gogoshuttles-750x465.png" alt="GO-GO 13-Seater Shuttle">
-                        <img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/Mercedes-Benz-Inkanyezi-Sprinter-135-veed-remove-background-e1689592481513-750x465.png" alt="GO-GO Mercedes Sprinter">
+                    <!-- CHANGE 2: replaced stacked 3-image layout with auto-cycling image switcher -->
+                    <div class="about-img-wrap about-img-switcher">
+                        <div class="aimg-stack">
+                            <img class="aimg active" src="assets/img/gogo-photos/scania5.jpg" alt="GO-GO Shuttles Fleet">
+                            <img class="aimg" src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/13-seater-gogoshuttles-750x465.png" alt="GO-GO 13-Seater Shuttle">
+                            <img class="aimg" src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/Mercedes-Benz-Inkanyezi-Sprinter-135-veed-remove-background-e1689592481513-750x465.png" alt="GO-GO Mercedes Sprinter">
+                            <div class="aimg-dots">
+                                <span class="aimg-dot active" data-idx="0"></span>
+                                <span class="aimg-dot" data-idx="1"></span>
+                                <span class="aimg-dot" data-idx="2"></span>
+                            </div>
+                        </div>
                         <div class="about-img-info">B-BBEE Level 1</div>
                     </div>
                 </div>
@@ -804,55 +883,44 @@
                         <div class="swiper-slide">
                             <div class="project-item wow fade-in-bottom" data-wow-delay="200ms">
                                 <div class="project-thumb project-view">
-                                    <a class="venobox" href="https://gogoshuttles.co.za/wp-content/uploads/2022/02/gogo-shuttle-3.jpg" data-gall="projects"><img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/gogo-shuttle-3.jpg" alt="Staff Transport Mining"></a>
+                                    <a class="venobox" href="assets/img/gogo-photos/tours.jpeg" data-gall="projects"><img src="assets/img/gogo-photos/tours.jpeg" alt="Tours Transport"></a>
                                 </div>
                                 <div class="project-content">
-                                    <a href="projects.html" class="category">Corporate</a>
-                                    <h3><a href="project-details.html">Staff Transport — Mining Sector</a></h3>
+                                    <a href="projects.html" class="category">Tours</a>
+                                    <h3><a href="project-details.html">Tour &amp; Travel Shuttle Services</a></h3>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="project-item wow fade-in-bottom" data-wow-delay="400ms">
                                 <div class="project-thumb project-view">
-                                    <a class="venobox" href="https://gogoshuttles.co.za/wp-content/uploads/2023/07/coach-bus-SCANIA-Touring-Higer-A-Series-4x2-Euro6-bus-1675933089528159253_big-23012518511180433300-veed-remove-background-750x465.png" data-gall="projects"><img src="https://gogoshuttles.co.za/wp-content/uploads/2023/07/coach-bus-SCANIA-Touring-Higer-A-Series-4x2-Euro6-bus-1675933089528159253_big-23012518511180433300-veed-remove-background-750x465.png" alt="Corporate Event Shuttle"></a>
+                                    <a class="venobox" href="assets/img/gogo-photos/mines.jpeg" data-gall="projects"><img src="assets/img/gogo-photos/mines.jpeg" alt="Mining Sector Transport"></a>
                                 </div>
                                 <div class="project-content">
-                                    <a href="projects.html" class="category">Events</a>
-                                    <h3><a href="project-details.html">Corporate Event Shuttle Logistics</a></h3>
+                                    <a href="projects.html" class="category">Mines</a>
+                                    <h3><a href="project-details.html">Mining Sector Staff Transport</a></h3>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="project-item wow fade-in-bottom" data-wow-delay="600ms">
                                 <div class="project-thumb project-view">
-                                    <a class="venobox" href="https://gogoshuttles.co.za/wp-content/uploads/2022/02/Mercedes-Benz-Inkanyezi-Sprinter-135-veed-remove-background-e1689592481513-750x465.png" data-gall="projects"><img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/Mercedes-Benz-Inkanyezi-Sprinter-135-veed-remove-background-e1689592481513-750x465.png" alt="Park and Ride"></a>
+                                    <a class="venobox" href="assets/img/gogo-photos/SchoolKids.jpeg" data-gall="projects"><img src="assets/img/gogo-photos/SchoolKids.jpeg" alt="School Kids Transport"></a>
                                 </div>
                                 <div class="project-content">
-                                    <a href="projects.html" class="category">Park &amp; Ride</a>
-                                    <h3><a href="project-details.html">Park-and-Ride Hub Solutions</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="project-item wow fade-in-bottom" data-wow-delay="700ms">
-                                <div class="project-thumb project-view">
-                                    <a class="venobox" href="https://gogoshuttles.co.za/wp-content/uploads/2023/07/Hyundai_Universe_Xpress_Noble_Bus-veed-remove-background-750x400.png" data-gall="projects"><img src="https://gogoshuttles.co.za/wp-content/uploads/2023/07/Hyundai_Universe_Xpress_Noble_Bus-veed-remove-background-750x400.png" alt="School Campus Transport"></a>
-                                </div>
-                                <div class="project-content">
-                                    <a href="projects.html" class="category">Academic</a>
-                                    <h3><a href="project-details.html">School &amp; Campus Transport</a></h3>
+                                    <a href="projects.html" class="category">School Kids</a>
+                                    <h3><a href="project-details.html">Safe School Learner Transport</a></h3>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="project-item wow fade-in-bottom" data-wow-delay="800ms">
                                 <div class="project-thumb project-view">
-                                    <a class="venobox" href="https://gogoshuttles.co.za/wp-content/uploads/2022/02/52134279_494859090917993_2884549904858873856_n-veed-remove-background-e1689591909777-750x465.png" data-gall="projects"><img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/52134279_494859090917993_2884549904858873856_n-veed-remove-background-e1689591909777-750x465.png" alt="NGO ECD Transport"></a>
+                                    <a class="venobox" href="assets/img/gogo-photos/staff.jpeg" data-gall="projects"><img src="assets/img/gogo-photos/staff.jpeg" alt="Staff Transport"></a>
                                 </div>
                                 <div class="project-content">
-                                    <a href="projects.html" class="category">Community</a>
-                                    <h3><a href="project-details.html">NGO &amp; ECD Centre Transport</a></h3>
+                                    <a href="projects.html" class="category">Staff</a>
+                                    <h3><a href="project-details.html">Corporate Staff Transport Solutions</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -1038,83 +1106,7 @@
     ══════════════════════════════════ -->
     <!--
     <section class="team-section padding">
-        <div class="container">
-            <div class="section-heading text-center mb-40">
-                <h3 class="sub-heading is-border border-anim">Our Dedicated Transport Team<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
-                <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Professional &amp; <span class="hl">Uniformed</span><br>Drivers &amp; Staff!</h2>
-                <p class="text-anim" data-effect="fade-in-bottom" data-ease="power4.out">Every GO-GO Shuttles driver holds a valid PDP and undergoes <br>regular safety and service training.</p>
-            </div>
-            <div class="row gy-lg-0 gy-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item wow fade-in-bottom" data-wow-delay="100ms">
-                        <div class="team-thumb">
-                            <img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/13-seater-gogoshuttles-750x465.png" alt="GO-GO Shuttles 13-Seater">
-                            <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-content">
-                            <h4 class="position">Fleet Supervisor</h4>
-                            <h3><a href="team-details.html">Operations Manager</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item wow fade-in-bottom" data-wow-delay="300ms">
-                        <div class="team-thumb">
-                            <img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/Mercedes-Benz-Inkanyezi-Sprinter-135-veed-remove-background-e1689592481513-750x465.png" alt="GO-GO Mercedes Sprinter">
-                            <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-content">
-                            <h4 class="position">Route Coordinator</h4>
-                            <h3><a href="team-details.html">Dispatch Controller</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item wow fade-in-bottom" data-wow-delay="500ms">
-                        <div class="team-thumb">
-                            <img src="https://gogoshuttles.co.za/wp-content/uploads/2023/07/coach-bus-SCANIA-Touring-Higer-A-Series-4x2-Euro6-bus-1675933089528159253_big-23012518511180433300-veed-remove-background-750x465.png" alt="GO-GO Scania Coach">
-                            <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-content">
-                            <h4 class="position">Senior Driver</h4>
-                            <h3><a href="team-details.html">PDP Certified Driver</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item wow fade-in-bottom" data-wow-delay="700ms">
-                        <div class="team-thumb">
-                            <img src="https://gogoshuttles.co.za/wp-content/uploads/2023/07/Hyundai_Universe_Xpress_Noble_Bus-veed-remove-background-750x400.png" alt="GO-GO Hyundai Bus">
-                            <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-content">
-                            <h4 class="position">Client Liaison</h4>
-                            <h3><a href="team-details.html">Customer Experience</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        ...
     </section>
     -->
 
@@ -1239,7 +1231,7 @@
                                         <li><i class="fa-sharp fa-solid fa-star"></i></li>
                                     </ul>
                                     <div class="quote-icon"><i class="fa-sharp fa-solid fa-quote-right"></i></div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -1273,100 +1265,11 @@
     </section>
 
     <!-- ══════════════════════════════════
-         PARTNERS / SPONSORS
-    ══════════════════════════════════ 
-    <div class="sponsor-section">
-        <div class="container">
-            <div class="sponsor-carousel-wrapper">
-                <div class="sponsor-carousel">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="#"><img src="assets/img/sponsor-01.png" alt="Partner"></a></div>
-                        <div class="swiper-slide"><a href="#"><img src="assets/img/sponsor-02.png" alt="Partner"></a></div>
-                        <div class="swiper-slide"><a href="#"><img src="assets/img/sponsor-03.png" alt="Partner"></a></div>
-                        <div class="swiper-slide"><a href="#"><img src="assets/img/sponsor-04.png" alt="Partner"></a></div>
-                        <div class="swiper-slide"><a href="#"><img src="assets/img/sponsor-05.png" alt="Partner"></a></div>
-                        <div class="swiper-slide"><a href="#"><img src="assets/img/sponsor-06.png" alt="Partner"></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-
-    <!-- ══════════════════════════════════
-         BLOG / NEWS
-    ══════════════════════════════════ -->
-    <!-- COMMENTED OUT: News & Articles section
-    <section class="blog-section padding">
-        <div class="container">
-            <div class="section-heading-wrap mb-40">
-                <div class="section-heading">
-                    <h3 class="sub-heading is-border border-anim">News &amp; Insights!<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
-                    <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Transport Tips &amp; <br>Company <span class="hl">News!</span></h2>
-                </div>
-                <a href="blog-grid.html" class="default-btn wow fade-in-right" data-wow-delay="100ms">View All Posts</a>
-            </div>
-            <div class="row gy-lg-0 gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="post-card wow fade-in-bottom" data-wow-delay="100ms">
-                        <div class="post-thumb"><img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/801-scaled.jpeg" alt="5 Reasons to Outsource Staff Transport"></div>
-                        <div class="post-content-wrap">
-                            <a href="blog-grid.html" class="post-date"><time><span>15</span>Mar 2025</time></a>
-                            <ul class="post-meta">
-                                <li><i class="fa-regular fa-user"></i><a href="#">GO-GO Team</a></li>
-                                <li><i class="fa-sharp fa-regular fa-bookmark"></i><a href="#">Staff Transport</a></li>
-                            </ul>
-                            <div class="post-content">
-                                <h3><a href="blog-details.html" class="hover">5 Reasons to Outsource Your Staff Transport</a></h3>
-                                <p>Discover how professional shuttle services reduce absenteeism and boost employee productivity across Gauteng...</p>
-                                <a href="blog-details.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="post-card wow fade-in-bottom" data-wow-delay="300ms">
-                        <div class="post-thumb"><img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/gogo-shuttle-3.jpg" alt="Event Shuttle Logistics"></div>
-                        <div class="post-content-wrap">
-                            <a href="blog-grid.html" class="post-date"><time><span>02</span>Apr 2025</time></a>
-                            <ul class="post-meta">
-                                <li><i class="fa-regular fa-user"></i><a href="#">GO-GO Team</a></li>
-                                <li><i class="fa-sharp fa-regular fa-bookmark"></i><a href="#">Events</a></li>
-                            </ul>
-                            <div class="post-content">
-                                <h3><a href="blog-details.html">Planning Large Event Shuttle Logistics in Sandton</a></h3>
-                                <p>A guide to seamless park-and-ride and delegate transport for conferences and corporate gatherings...</p>
-                                <a href="blog-details.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="post-card wow fade-in-bottom" data-wow-delay="500ms">
-                        <div class="post-thumb"><img src="https://gogoshuttles.co.za/wp-content/uploads/2022/02/786-scaled.jpeg" alt="B-BBEE Level 1 Benefits"></div>
-                        <div class="post-content-wrap">
-                            <a href="blog-grid.html" class="post-date"><time><span>20</span>Apr 2025</time></a>
-                            <ul class="post-meta">
-                                <li><i class="fa-regular fa-user"></i><a href="#">GO-GO Team</a></li>
-                                <li><i class="fa-sharp fa-regular fa-bookmark"></i><a href="#">B-BBEE</a></li>
-                            </ul>
-                            <div class="post-content">
-                                <h3><a href="blog-details.html">How B-BBEE Level 1 Benefits Your Procurement Score</a></h3>
-                                <p>Partnering with GO-GO Shuttles means quality transport and real transformation impact for your business...</p>
-                                <a href="blog-details.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    END COMMENTED OUT: News & Articles section -->
-
-    <!-- ══════════════════════════════════
          FOOTER
     ══════════════════════════════════ -->
     <footer class="footer-section">
-        <div class="map-pattern"></div>
+        <!-- map-pattern (cartoon houses animation) commented out -->
+        <!-- <div class="map-pattern"></div> -->
         <div class="footer-wrapper">
             <div class="container">
                 <div class="row gy-lg-0 gy-4">
@@ -1455,6 +1358,59 @@
     <script src="assets/js/mailchimp.js"></script>
     <script src="assets/js/quote-form.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- CHANGE 2: About image auto-cycling switcher script -->
+    <script>
+    (function () {
+        var imgs, dots, cur = 0, timer, total;
+
+        function init() {
+            imgs  = document.querySelectorAll('.aimg-stack .aimg');
+            dots  = document.querySelectorAll('.aimg-stack .aimg-dot');
+            if (!imgs.length) return;
+            total = imgs.length;
+
+            // Dot click
+            dots.forEach(function (d) {
+                d.addEventListener('click', function () {
+                    goTo(parseInt(this.dataset.idx));
+                    restartAuto();
+                });
+            });
+
+            // Click stack to advance
+            var stack = document.querySelector('.aimg-stack');
+            if (stack) {
+                stack.addEventListener('click', function () {
+                    goTo(cur + 1);
+                    restartAuto();
+                });
+                // Hover: pause auto-cycle
+                stack.addEventListener('mouseenter', function () { clearInterval(timer); });
+                stack.addEventListener('mouseleave', function () { startAuto(); });
+            }
+
+            startAuto();
+        }
+
+        function goTo(n) {
+            imgs[cur].classList.remove('active');
+            dots[cur].classList.remove('active');
+            cur = ((n % total) + total) % total;
+            imgs[cur].classList.add('active');
+            dots[cur].classList.add('active');
+        }
+
+        function startAuto()   { timer = setInterval(function () { goTo(cur + 1); }, 3000); }
+        function restartAuto() { clearInterval(timer); startAuto(); }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
 
 </body>
 </html>
