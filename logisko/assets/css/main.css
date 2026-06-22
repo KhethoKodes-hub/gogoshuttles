@@ -2992,7 +2992,7 @@
 }
 
 .footer-wrapper {
-    background-image: url(../img/footer-shape.png);
+    /*background-image: url(../img/footer-shape.png);*/
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
