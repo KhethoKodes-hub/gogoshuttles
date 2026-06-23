@@ -777,6 +777,59 @@
             .anniv-number { font-size: 110px; }
             .anniv-float-badge { width: 60px; height: 60px; bottom: 70px; left: 12px; }
         }
+
+        /* ── Trip toggle styles ── */
+        .trip-toggle-wrap {
+            display: flex;
+            gap: 0;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 2px solid #e31837;
+            margin-bottom: 20px;
+        }
+        .trip-toggle-btn {
+            flex: 1;
+            padding: 10px 0;
+            background: transparent;
+            border: none;
+            color: #e31837;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            text-transform: uppercase;
+        }
+        .trip-toggle-btn.active {
+            background: #e31837;
+            color: #fff;
+        }
+        .trip-toggle-btn:not(.active):hover {
+            background: rgba(227,24,55,0.08);
+        }
+
+        /* ── Location field with icon button ── */
+        .location-field {
+            position: relative;
+        }
+        .location-field .form-control {
+            padding-right: 44px !important;
+        }
+        .locate-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #e31837;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .locate-btn:hover { color: #04223e; }
     </style>
 </head>
 
@@ -841,12 +894,14 @@
                             <li>
                                 <a href="projects.html">Projects</a>
                             </li>
+                                                        <li><a href="https://photocine2026.pixieset.com/shuttleservice-1/">Gallery</a></li>
+
                             <li><a href="contact.html">Contact</a></li>
                         <div class="menu-right-item">
                             <div class="mobile-menu-icon">
                                 <i class="fa-regular fa-ellipsis-vertical"></i>
                             </div>
-                            <a href="https://www.gogoshuttles.co.za/client-portal/" target="_blank" class="default-btn book-cta-btn d-none d-lg-block d-md-block">
+                            <a href="quote.html" target="_blank" class="default-btn book-cta-btn d-none d-lg-block d-md-block">
                                 <i class="fa-regular fa-bus"></i>Quick quote
                             </a>
                         </div>
@@ -904,7 +959,7 @@
                                     </div>
                                 </div>
                                 <div class="slider-btn">
-                                    <a href="https://www.gogoshuttles.co.za/client-portal/" target="_blank" class="default-btn" data-animation="fade-in-bottom" data-delay="0.9s">Quick Quote</a>
+                                    <a href="quote.html" target="_blank" class="default-btn" data-animation="fade-in-bottom" data-delay="0.9s">Quick Quote</a>
                                 </div>
                             </div>
                         </div>
@@ -937,7 +992,7 @@
                                     </div>
                                 </div>
                                 <div class="slider-btn">
-                                    <a href="contact.html" class="default-btn" data-animation="fade-in-bottom" data-delay="0.9s">Get a Quote</a>
+                                    <a href="quote.html" target="_blank" class="default-btn" data-animation="fade-in-bottom" data-delay="0.9s">Get a Quote</a>
                                 </div>
                             </div>
                         </div>
@@ -991,9 +1046,9 @@
                 <div class="col-lg-5">
                     <div class="about-img-wrap about-img-switcher">
                         <div class="aimg-stack">
-                            <img class="aimg active" src="assets/img/gogo-photos/school.jpg" alt="GO-GO Shuttles Fleet">
-                            <img class="aimg" src="assets/img/gogo-photos/scania5.jpg" alt="GO-GO 13-Seater Shuttle">
-                            <img class="aimg" src="assets/img/gogo-photos/school.jpg" alt="GO-GO Mercedes Sprinter">
+                            <img class="aimg active" src="assets/img/gogo-photos/corporate6.jpg" alt="GO-GO Shuttles Fleet">
+                            <img class="aimg" src="assets/img/gogo-photos/newwww.jpeg" alt="GO-GO 13-Seater Shuttle">
+                            <img class="aimg" src="assets/img/gogo-photos/neww.jpeg" alt="GO-GO Mercedes Sprinter">
                             <div class="aimg-dots">
                                 <span class="aimg-dot active" data-idx="0"></span>
                                 <span class="aimg-dot" data-idx="1"></span>
@@ -1497,37 +1552,38 @@
                             <div class="form-heading mb-30">
                                 <h2>Quick Booking</h2>
                             </div>
+
+                            <!-- Trip Type Toggle -->
+                            <div class="trip-toggle-wrap">
+                                <button type="button" class="trip-toggle-btn active" id="btn-return" onclick="setTripType('return')">Return Trip</button>
+                                <button type="button" class="trip-toggle-btn" id="btn-oneway" onclick="setTripType('oneway')">One Way Trip</button>
+                            </div>
+                            <input type="hidden" name="q-trip-type" id="q-trip-type" value="return">
+
                             <div class="quote-form-group">
                                 <div class="form-field">
-                                    <input type="text" id="q-full-name" name="q-full-name" class="form-control" placeholder="Full Name" required="">
+                                    <input type="date" id="q-pickup-date" name="q-pickup-date" class="form-control" required>
                                 </div>
                                 <div class="form-field">
-                                    <input type="phone" id="q-phone" name="q-phone" class="form-control" placeholder="Phone Number" required="">
+                                    <input type="time" id="q-pickup-time" name="q-pickup-time" class="form-control" required>
                                 </div>
-                                <div class="form-field">
-                                    <input type="text" id="q-depature" name="q-depature" class="form-control" placeholder="Pick-up Location" required="">
+                                <div class="form-field" id="field-return-date">
+                                    <input type="date" id="q-return-date" name="q-return-date" class="form-control" required>
                                 </div>
-                                <div class="form-field">
-                                    <input type="text" id="q-destination" name="q-destination" class="form-control" placeholder="Drop-off Destination" required="">
+                                <div class="form-field" id="field-return-time">
+                                    <input type="time" id="q-return-time" name="q-return-time" class="form-control" required>
                                 </div>
-                                <div class="form-field">
-                                    <input type="text" id="q-weight" name="q-weight" class="form-control" placeholder="Number of Passengers" required="">
+                                <div class="form-field location-field">
+                                    <input type="text" id="q-collection" name="q-collection" class="form-control" placeholder="Collection Address" required>
+                                    <button type="button" class="locate-btn" onclick="gogoGetLocation('q-collection')" title="Use my current location">
+                                        <i class="fa-regular fa-location-crosshairs"></i>
+                                    </button>
                                 </div>
-                                <div class="form-field">
-                                    <select name="q-freight-type" id="q-freight-type">
-                                        <option value="Service Type">Service Type</option>
-                                        <option value="Staff Transportation">Staff Transportation</option>
-                                        <option value="Park-and-Ride">Park-and-Ride</option>
-                                        <option value="Corporate Events">Corporate Events Transport</option>
-                                        <option value="School Transport">School &amp; Academic Transport</option>
-                                        <option value="Private Charter">Private Group Charter</option>
-                                    </select>
-                                </div>
-                                <div class="form-field">
-                                    <input type="email" id="q-email" name="q-email" class="form-control" placeholder="Email Address" required>
-                                </div>
-                                <div class="form-field message">
-                                    <textarea id="q-message" name="q-message" cols="30" rows="4" class="form-control" placeholder="Additional Details / Special Requirements" required></textarea>
+                                <div class="form-field location-field">
+                                    <input type="text" id="q-destination" name="q-destination" class="form-control" placeholder="Destination Address" required>
+                                    <button type="button" class="locate-btn" onclick="gogoGetLocation('q-destination')" title="Use my current location">
+                                        <i class="fa-regular fa-location-crosshairs"></i>
+                                    </button>
                                 </div>
                                 <div class="form-field submit-btn">
                                     <button id="submit" class="default-btn" type="submit">Get a Quote</button>
@@ -1718,6 +1774,63 @@
     <script src="assets/js/mailchimp.js"></script>
     <script src="assets/js/quote-form.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+    /* ── Trip Toggle + Geolocation ── */
+    function setTripType(type) {
+        document.getElementById('q-trip-type').value = type;
+        var btnReturn       = document.getElementById('btn-return');
+        var btnOneway       = document.getElementById('btn-oneway');
+        var fieldReturnDate = document.getElementById('field-return-date');
+        var fieldReturnTime = document.getElementById('field-return-time');
+        var returnDate      = document.getElementById('q-return-date');
+        var returnTime      = document.getElementById('q-return-time');
+        if (type === 'return') {
+            btnReturn.classList.add('active');
+            btnOneway.classList.remove('active');
+            fieldReturnDate.style.display = '';
+            fieldReturnTime.style.display = '';
+            returnDate.required = true;
+            returnTime.required = true;
+        } else {
+            btnOneway.classList.add('active');
+            btnReturn.classList.remove('active');
+            fieldReturnDate.style.display = 'none';
+            fieldReturnTime.style.display = 'none';
+            returnDate.required = false;
+            returnTime.required = false;
+        }
+    }
+
+    function gogoGetLocation(targetId) {
+        if (!navigator.geolocation) {
+            alert('Geolocation is not supported by your browser.');
+            return;
+        }
+        var btn = document.querySelector('[onclick="gogoGetLocation(\'' + targetId + '\')"]');
+        if (btn) btn.innerHTML = '<i class="fa-regular fa-spinner fa-spin"></i>';
+        navigator.geolocation.getCurrentPosition(
+            function(pos) {
+                var lat = pos.coords.latitude;
+                var lng = pos.coords.longitude;
+                fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=' + lat + '&lon=' + lng)
+                    .then(function(r) { return r.json(); })
+                    .then(function(data) {
+                        document.getElementById(targetId).value = data.display_name || (lat + ', ' + lng);
+                        if (btn) btn.innerHTML = '<i class="fa-regular fa-location-crosshairs"></i>';
+                    })
+                    .catch(function() {
+                        document.getElementById(targetId).value = lat + ', ' + lng;
+                        if (btn) btn.innerHTML = '<i class="fa-regular fa-location-crosshairs"></i>';
+                    });
+            },
+            function() {
+                alert('Unable to retrieve your location. Please type it in.');
+                if (btn) btn.innerHTML = '<i class="fa-regular fa-location-crosshairs"></i>';
+            }
+        );
+    }
+    </script>
 
     <script>
     (function () {
