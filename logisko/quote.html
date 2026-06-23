@@ -717,14 +717,22 @@
                             <p>All fields are required. We'll send your quote directly to your email.</p>
                         </div>
 
-                        <form id="gogo-quote-form" novalidate>
+                        <!-- FormSubmit.co Integration - sends to kmngomezulu82@gmail.com -->
+                        <form id="gogo-quote-form" action="https://formsubmit.co/kmngomezulu82@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+
+                            <!-- FormSubmit.co configuration -->
+                            <input type="hidden" name="_subject" value="GO-GO Shuttles - New Quote Request">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_replyto" value="email">
+                            <input type="hidden" name="_next" value="https://gogoshuttles.co.za/thank-you.html">
 
                             <!-- Trip Type Toggle -->
                             <div class="trip-toggle-wrap">
                                 <button type="button" class="trip-toggle-btn active" id="btn-return" onclick="setTripType('return')">Return Trip</button>
                                 <button type="button" class="trip-toggle-btn" id="btn-oneway" onclick="setTripType('oneway')">One Way Trip</button>
                             </div>
-                            <input type="hidden" name="q-trip-type" id="q-trip-type" value="return">
+                            <input type="hidden" name="Trip Type" id="q-trip-type" value="return">
 
                             <!-- Trip Details -->
                             <div class="qf-section-label">Trip Details</div>
@@ -732,29 +740,29 @@
                             <div class="qf-row">
                                 <div class="qf-field">
                                     <label for="q-pickup-date">Pickup Date</label>
-                                    <input type="date" id="q-pickup-date" name="q-pickup-date" required>
+                                    <input type="date" id="q-pickup-date" name="Pickup Date" required>
                                 </div>
                                 <div class="qf-field">
                                     <label for="q-pickup-time">Pickup Time</label>
-                                    <input type="time" id="q-pickup-time" name="q-pickup-time" required>
+                                    <input type="time" id="q-pickup-time" name="Pickup Time" required>
                                 </div>
                             </div>
 
                             <div class="qf-row" id="field-return-dates">
                                 <div class="qf-field">
                                     <label for="q-return-date">Return Date</label>
-                                    <input type="date" id="q-return-date" name="q-return-date" required>
+                                    <input type="date" id="q-return-date" name="Return Date" required>
                                 </div>
                                 <div class="qf-field">
                                     <label for="q-return-time">Return Time</label>
-                                    <input type="time" id="q-return-time" name="q-return-time" required>
+                                    <input type="time" id="q-return-time" name="Return Time" required>
                                 </div>
                             </div>
 
                             <div class="qf-row full" style="margin-bottom:16px;">
                                 <div class="qf-field qf-location">
                                     <label for="q-collection">Collection Address</label>
-                                    <input type="text" id="q-collection" name="q-collection" placeholder="Type address or use location pin" required>
+                                    <input type="text" id="q-collection" name="Collection Address" placeholder="Type address or use location pin" required>
                                     <button type="button" class="locate-btn" onclick="gogoGetLocation('q-collection')" title="Use my current location">
                                         <i class="fa-regular fa-location-crosshairs"></i>
                                     </button>
@@ -764,7 +772,7 @@
                             <div class="qf-row full" style="margin-bottom:16px;">
                                 <div class="qf-field qf-location">
                                     <label for="q-destination">Destination Address</label>
-                                    <input type="text" id="q-destination" name="q-destination" placeholder="Type address or use location pin" required>
+                                    <input type="text" id="q-destination" name="Destination Address" placeholder="Type address or use location pin" required>
                                     <button type="button" class="locate-btn" onclick="gogoGetLocation('q-destination')" title="Use my current location">
                                         <i class="fa-regular fa-location-crosshairs"></i>
                                     </button>
@@ -777,29 +785,29 @@
                             <div class="qf-row">
                                 <div class="qf-field">
                                     <label for="q-full-name">Full Name</label>
-                                    <input type="text" id="q-full-name" name="q-full-name" placeholder="Full Name" required>
+                                    <input type="text" id="q-full-name" name="Full Name" placeholder="Full Name" required>
                                 </div>
                                 <div class="qf-field">
                                     <label for="q-phone">Phone Number</label>
-                                    <input type="tel" id="q-phone" name="q-phone" placeholder="Phone Number" required>
+                                    <input type="tel" id="q-phone" name="Phone Number" placeholder="Phone Number" required>
                                 </div>
                             </div>
 
                             <div class="qf-row">
                                 <div class="qf-field">
                                     <label for="q-email">Email Address</label>
-                                    <input type="email" id="q-email" name="q-email" placeholder="Email Address" required>
+                                    <input type="email" id="q-email" name="Email" placeholder="Email Address" required>
                                 </div>
                                 <div class="qf-field">
                                     <label for="q-passengers">Number of Passengers</label>
-                                    <input type="number" id="q-passengers" name="q-passengers" placeholder="e.g. 12" min="1" required>
+                                    <input type="number" id="q-passengers" name="Number of Passengers" placeholder="e.g. 12" min="1" required>
                                 </div>
                             </div>
 
                             <div class="qf-row full" style="margin-bottom:16px;">
                                 <div class="qf-field">
                                     <label for="q-service-type">Service Type</label>
-                                    <select id="q-service-type" name="q-service-type" required>
+                                    <select id="q-service-type" name="Service Type" required>
                                         <option value="">— Select Service Type —</option>
                                         <option value="Staff Transportation">Staff Transportation</option>
                                         <option value="Park-and-Ride">Park-and-Ride</option>
@@ -815,7 +823,7 @@
                             <div class="qf-row full" style="margin-bottom:16px;">
                                 <div class="qf-field">
                                     <label for="q-message">Additional Details / Special Requirements</label>
-                                    <textarea id="q-message" name="q-message" placeholder="Any additional information about your trip..."></textarea>
+                                    <textarea id="q-message" name="Additional Details" placeholder="Any additional information about your trip..."></textarea>
                                 </div>
                             </div>
 
@@ -964,57 +972,37 @@
         );
     }
 
-    /* ── Form Submission (AJAX to PHP mailer) ── */
-    document.getElementById('gogo-quote-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+    /* ── Form Submission - Visual Feedback ── */
+    var gogoForm = document.getElementById('gogo-quote-form');
+    var msgBox = document.getElementById('q-form-messages');
 
-        var form      = this;
-        var btn       = document.getElementById('qf-submit-btn');
-        var msgBox    = document.getElementById('q-form-messages');
+    gogoForm.addEventListener('submit', function(e) {
+        var btn = document.getElementById('qf-submit-btn');
 
-        /* Basic validation */
-        var required = form.querySelectorAll('[required]');
+        // Basic validation check
+        var required = gogoForm.querySelectorAll('[required]');
         var valid = true;
         required.forEach(function(el) {
             if (!el.value.trim()) { el.style.borderColor = '#e31837'; valid = false; }
             else { el.style.borderColor = ''; }
         });
         if (!valid) {
+            e.preventDefault();
             msgBox.className = 'error';
             msgBox.textContent = 'Please fill in all required fields.';
+            msgBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             return;
         }
 
+        // Show sending state (form will submit to FormSubmit.co)
         btn.disabled = true;
         btn.textContent = 'Sending…';
 
-        var data = new FormData(form);
-
-        fetch('php/quote-mailer.php', {
-            method: 'POST',
-            body: data
-        })
-        .then(function(r) { return r.json(); })
-        .then(function(res) {
-            if (res.success) {
-                msgBox.className = 'success';
-                msgBox.textContent = '✓ Your quote request has been sent! We\'ll be in touch within 2 business hours.';
-                form.reset();
-                setTripType('return');
-            } else {
-                msgBox.className = 'error';
-                msgBox.textContent = res.message || 'Something went wrong. Please try again or call us directly.';
-            }
-        })
-        .catch(function() {
-            msgBox.className = 'error';
-            msgBox.textContent = 'Network error. Please try again or call us on 011 568 5340.';
-        })
-        .finally(function() {
+        // Re-enable after 3 seconds (form will redirect to thank you page)
+        setTimeout(function() {
             btn.disabled = false;
             btn.innerHTML = '<i class="fa-regular fa-paper-plane" style="margin-right:8px;"></i>Get a Quote';
-            msgBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        });
+        }, 3000);
     });
     </script>
 
